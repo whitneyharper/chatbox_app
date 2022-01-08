@@ -3,13 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Chatbox</title>
-        <link href="/styles.css" rel="stylesheet" />
+        <link href="/styles.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Chatbox</h1>
+        <div id="chatbox">
+            <div id="chat-window">
+                <div id="output"></div>
+            </div>
+            <input id="name" type="text" placeholder="Name" />
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send">Send</button>
+        </div>
         <script src="/socket.io/socket.io.js"></script>
-        <script>
-        var socket = io();
-        </script>
+        <script src="/chat.js"></script>
     </body>
 </html>

@@ -5,10 +5,10 @@ body{
 h2{
     font-size: 18px;
     padding: 10px 20px;
-    color: #575ed8;
+    color: #701469;
 }
 
-#mario-chat{
+#chatbox{
     max-width: 600px;
     margin: 30px auto;
     border: 1px solid #ddd;
@@ -59,7 +59,7 @@ input{
 }
 
 button{
-    background: #575ed8;
+    background: purple;
     color: #fff;
     font-size: 18px;
     border: 0;

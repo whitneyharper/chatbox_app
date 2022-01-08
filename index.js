@@ -3,9 +3,7 @@ const app = express();
 const port = 3000;
 const socket = require('socket.io');
 
-app.get('/', (req, res) => {
-    res.sendFile('public/index.html' , { root : __dirname})
-});
+app.use(express.static('public'));
 
 //SERVER
 const server = app.listen(port, () => {
@@ -17,4 +15,8 @@ const io = socket(server);
 
 io.on('connection', (socket) => {
     console.log(`socket connection activated.`);
+
+    socket.on('chat message', (data) => {
+        io.emit('chat message', data);
+    })
 })
