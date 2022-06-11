@@ -2,11 +2,16 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
+const path = require('path');
 const socket = require('socket.io');
 const cors = require('cors');
 const Message = require('./message');
 
-app.use(cors());
+app.use(cors({
+    origin: '*'
+  }));
+
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 //Database
 const dbSetup = require('./database');
