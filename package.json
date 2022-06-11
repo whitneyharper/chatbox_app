@@ -1,21 +1,24 @@
 {
   "name": "chatbox_app",
   "version": "1.0.0",
-  "description": "my first socket.io app",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "concurrently --kill-others \"heroku local\" \"npm run start --prefix ./client\"",
+    "postinstall": "npm install --prefix ./server && npm install --prefix ./client && npm run build --prefix ./client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitneyharper/chatbox_app.git"
   },
   "author": "Whitney Harper",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "socket.io": "^4.4.0"
+  "bugs": {
+    "url": "https://github.com/whitneyharper/chatbox_app/issues"
   },
+  "homepage": "https://github.com/whitneyharper/chatbox_app#readme",
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "concurrently": "^7.2.1"
   }
 }
