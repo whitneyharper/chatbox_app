@@ -7,7 +7,6 @@ const cors = require('cors');
 const Message = require('./message');
 
 app.use(cors());
-app.use(express.static('public'));
 
 //Database
 const dbSetup = require('./database');
